@@ -17,14 +17,14 @@ export default function Featured() {
   return (
     <div>
 
-      <div className='w-11/12 mx-auto py-20'>
-        <h2 className="text-3xl font-semibold text-start mb-10">Featured Categories</h2>
-        <div className='grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4'>
+      <div className='w-11/12 mx-auto py-8 md:py-20'>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-start mb-10">Featured Categories</h2>
+        <div className='flex flex-wrap justify-center gap-4'>
             {figure.map((item, i)=>(
-                <div key={item.i} className={item.bg+" rounded-xl"}>
+                <div key={i} className={item.bg+" w-38 rounded-xl hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer "}>
                     <div className='px-3 py-6  flex flex-col items-center'>
                         <img src={item.image} alt={item.name} className='w-24 mb-4'/>
-                        <h3 className='font-semibold text-black/70 mb-2'>{item.name}</h3>
+                        <h3 className='font-semibold line-clamp-1 overflow-hidden text-black/70 mb-2'>{item.name}</h3>
                         <p className='text-sm text-gray-500'>{item.stock}</p>
                     </div>
                 </div>
