@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsFire } from "react-icons/bs";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,15 +12,17 @@ export default function Navbar() {
       <div className="w-11/12 mx-auto py-2 md:py-3  flex items-center justify-between ">
 
         {/* Left side */}
-        <div className="flex items-center gap-12 md:gap-4 lg:gap-16">
-
-          <div className="flex items-center gap-0 md:gap-1 lg:gap-2 cursor-pointer">
+        
+        <div className="flex items-center gap-12 md:gap-4 lg:gap-16 ">
+          <Link to="/">
+          <div className="flex items-center gap-0 md:gap-1 lg:gap-2 cursor-pointer hover:scale-105 transition-transform duration-300">
             <img src="/Images/logo.png" alt="Logo" className="w-10 md:w-14 lg:w-16" />
             <div className="flex flex-col gap-0">
               <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold text-[#3BB77E]">Nest</h2>
               <p className="text-[6px] md:text-[7px] lg:text-[8px] text-black/70 -mt-1">MART & GROCERY</p>
             </div>
           </div>
+          </Link>
           <p className="flex items-center gap-1 text-[14px] md:text-[16px] lg:text-[20px] cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300"><BsFire className="text-[#3BB77E]" /><span>Hot Deals</span></p>
           
         </div>
@@ -29,13 +32,13 @@ export default function Navbar() {
 
           {/* Mid menu for md+ screens */}
           <div className="hidden md:flex overflow-hidden gap-4 md:gap-4 lg:gap-10 p-2 ">
-            <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">About</p>
-            <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Shop</p>
-            <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Mega Menu</p>
+            <Link to="/"><p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Home</p></Link>
+            <Link to="/about"><p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">About</p></Link>
+            <Link to="/shop"><p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Shop</p></Link>
+            <Link to="/mega-menu"><p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Mega Menu</p></Link>
             <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Vendors</p>
-            <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Blogs</p>
-            <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Pages</p>
-            <p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Contact</p>
+            <Link to="/blog"><p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Blogs</p></Link> 
+            <Link to="/contact"><p className="text-[14px] md:text-[16px] lg:text-[20px]  cursor-pointer hover:text-green-600 hover:scale-110 transition-transform duration-300">Contact</p></Link>
           </div>
 
           {/* Small screen dropdown */}
@@ -43,13 +46,13 @@ export default function Navbar() {
             <button onClick={() => setIsOpen(!isOpen)} className=" -mr-6">{isOpen ? <HiX size={16} /> : <HiMenu size={24} />}</button>
             {isOpen && (
               <div className="absolute right-0 mt-2 w-40 bg-white/50 shadow-md rounded-md z-10 flex flex-col">
-                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">About</p>
-                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Shop</p>
-                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Mega Menu</p>
+                <Link to="/"><p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Home</p></Link>
+                <Link to="/about"><p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">About</p></Link>
+                <Link to="/shop"><p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Shop</p></Link>
+                <Link to="/mega-menu"><p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Mega Menu</p></Link>
                 <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Vendors</p>
-                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Blogs</p>
-                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Pages</p>
-                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Contact</p>
+                <Link to="/blog"><p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Blogs</p></Link>
+                <Link to="/contact"><p className="px-4 py-2 text-sm cursor-pointer hover:bg-green-300">Contact</p></Link>
               </div>
             )}
           </div>
