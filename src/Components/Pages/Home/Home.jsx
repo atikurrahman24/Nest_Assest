@@ -1,6 +1,7 @@
 import Navbar from "../../Navbar";
 import Card from "./Card";
 import Featured from "./Featured";
+import Products from "./Products";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <div className="w-11/12 mx-auto mt-4"><img src="/Images/banner.png" alt="Banner" className="w-full"/></div>
         <Featured></Featured>
         <Card></Card>
+        <Products></Products>
       </div>
     </div>
   )

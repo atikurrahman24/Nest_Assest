@@ -22,7 +22,7 @@ export default function Featured() {
 
       <div className='w-11/12 mx-auto py-8 md:py-20'>
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-start mb-10">Featured Categories</h2>
-        <div className='flex justify-center items-center gap-4'>
+        <div className='flex justify-center items-center gap-4 overflow-hidden'>
           <FaArrowLeft className='text-xl text-black/60 hover:scale-130 transition-transform duration-200' />
           {figure.map((item, i)=>(
                 <div key={i} className={item.bg+" w-38 rounded-xl hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer "}>
