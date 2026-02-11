@@ -16,7 +16,7 @@ const Extra = () => {
   ];
   return (
     <div className=' mx-auto py-8'>
-        <div className='flex flex-wrap items-center justify-evenly'>
+        <div className='flex flex-wrap gap-2 p-2 items-center justify-evenly'>
             {deals.map((item) =>(
                 <div key={item.id} className='bg-gray-100 rounded-lg flex items-center gap-4 p-3 w-full md:w-auto'>
                     <img src={item.image} alt={item.title} className='w-12 h-12' />
