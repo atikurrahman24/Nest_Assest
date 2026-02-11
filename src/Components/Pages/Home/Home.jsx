@@ -1,3 +1,4 @@
+import Footer from "../../Footer";
 import Navbar from "../../Navbar";
 import Card from "./Card";
 import Extra from "./Extra";
@@ -14,6 +15,7 @@ export default function Home() {
         <Card></Card>
         <Products></Products>
         <Extra></Extra>
+        <Footer></Footer>
       </div>
     </div>
   )
