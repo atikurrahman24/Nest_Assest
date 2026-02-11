@@ -1,5 +1,6 @@
 import Navbar from "../../Navbar";
 import Card from "./Card";
+import Extra from "./Extra";
 import Featured from "./Featured";
 import Products from "./Products";
 
@@ -12,6 +13,7 @@ export default function Home() {
         <Featured></Featured>
         <Card></Card>
         <Products></Products>
+        <Extra></Extra>
       </div>
     </div>
   )

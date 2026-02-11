@@ -11,7 +11,7 @@ const Products = () => {
     }, [])
     return (
 
-        <div className='w-11/12 mx-auto py-8 md:py-20'>
+        <div className='w-11/12 mx-auto'>
             <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-start mb-10">Products</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6 items-center justify-center pb-10">
                 {
